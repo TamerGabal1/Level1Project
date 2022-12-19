@@ -36,6 +36,7 @@ updateGuess = (num) => {
         }
         turn--;
         if(turn==0){
+            clock.innerHTML = "Guesses Remaining: " + turn;
             output.innerHTML = "Time's Up";
         }
         else{
@@ -46,6 +47,9 @@ updateGuess = (num) => {
 
 clear = () =>{
     guess = "";
+    secretCode = "";
+    output.innerHTML = "";
+    createCode();
 }
 
 button1.onclick = () => {
@@ -62,4 +66,6 @@ button3.onclick = () => {
 
 clearButton.onclick = () => {
     clear();
+    turn = 7;
+    clock.innerHTML = "Guesses Remaining: " + turn;
 }
